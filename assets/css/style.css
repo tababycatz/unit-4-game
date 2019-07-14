@@ -1,0 +1,14 @@
+h1 {
+    font-size: 100px;
+    color: black;
+    text-align: center;
+    padding: 20px 20px 20px 20px;
+
+}
+.chars {
+width: 200px;
+height: 300px;
+float: center;
+position: relative;
+
+}
