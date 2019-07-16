@@ -1,23 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>RPG Game</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/style.css">
-    
+
 </head>
+
 <body background="assets/images/bg.jpg">
-<h1> Adventure Time RPG</h1>
+    <h1> Adventure Time RPG</h1>
 
-<input type="image" src="assets/images/finn.png" name="finn"class="chars" id="finnH">
-<input type="image" src="assets/images/jake.png" name="finn" class="chars" id="jakeD">
-<input type="image" src="assets/images/iceking.png" name="finn" class="chars" id="iceKing">
-<input type="image" src="assets/images/lsp.png" name="finn" class="chars" id="lsP">
-    
+    <div class="yourChar">
+        <h3>Your Character:</h3>
+        <input type="image" src="assets/images/finn.png" name="finn" class="chars" id="finnH">
+        <input type="image" src="assets/images/jake.png" name="finn" class="chars" id="jakeD">
+        <input type="image" src="assets/images/iceking.png" name="finn" class="chars" id="iceKing">
+        <input type="image" src="assets/images/lsp.png" name="finn" class="chars" id="lsP">
+        <h4> Your Health <span id="player-health"></span></h4>
+    </div>
+
+    <div class="enemyS">
+        <h3> Enemies Available to Attack</h3>
+    </div>
+    <div class="fightS">
+        <h3> Fight Section</h3>
+        <button type="button" class="btn btn-outline-danger btn-lg"> Attack </button>
+    </div>
+    <div class="defenderS">
+        <h3> Enemy</h3>
+        <h4> Enemy Health <span id="enemy-health"></span></h4>
+    </div>
+
+
+
+    <button type="button" class="btn btn-outline-success btn-lg"> Clear </button>
 
 
 
@@ -31,8 +52,7 @@
 
 
 
-
-
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </body>
+
 </html>

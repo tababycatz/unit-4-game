@@ -5,10 +5,17 @@ h1 {
     padding: 20px 20px 20px 20px;
 
 }
+
+h3 {
+    font-size: 35px;
+    color: black;
+    text-align: center;
+
+}
+
 .chars {
 width: 200px;
 height: 300px;
-float: center;
 position: relative;
 
 }
