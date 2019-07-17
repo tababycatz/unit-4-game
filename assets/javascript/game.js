@@ -1,110 +1,113 @@
 $(document).ready(function () {
 
-// declaring vars for characters from html //
+    // declaring vars for characters from html //
 
-var finnChar = $("#finnH");
+    var finnChar = $("#finnH");
     var jakeChar = $("#jakeD");
     var iceKingChar = $("#iceKing");
     var lsPChar = $("#lsP");
 
-// declar var for all characters in an array of objects //
+    // declar var for all characters in an array of objects //
 
-var allChars = [{
-    name: "finn",
-    health: 100,
-    attack: 15,
-    counter: 20,
+    var allChars = [{
+        name: "finn",
+        health: 100,
+        attack: 15,
+        counter: 20,
+        loseImg: "finnlose.png",
 },
-{
-    name: "jake",
-    health: 120,
-    attack: 18,
-    counter: 35,
-},
-{
-    name: "iceking",
-    health: 130,
-    attack: 10,
-    counter: 5,
-},
-{
-    name: "lsp",
-    health: 150,
-    attack: 20,
-    counter: 18,
+    {
+        name: "jake",
+        health: 120,
+        attack: 18,
+        counter: 35,
+        loseImg: "jakelose.png",
+    },
+    {
+        name: "iceking",
+        health: 130,
+        attack: 10,
+        counter: 5,
+        loseImg: "icekinglose.png",
+    },
+    {
+        name: "lsp",
+        health: 150,
+        attack: 20,
+        counter: 18,
+        loseImg: "lsplose.png"
 
-}]
+    }]
 
-// user selecting character on click //
-var player = {};
-var chosenChar;
+    // user selecting character on click //
+    var player = "";
+    var chosenChar = "";
+    var opponent = "";
+    var currentE = "";
+    var currentAttack = 0;
+    var wins = 0;
+    var restartBtn = $("#restart-button");
+    var attackBtn = $("#attack-button");
 
-var chosenChar = "";
-var opponent = "";
-var currentE = "";
-var currentAttack = 0;
-var wins = 0;
-var restartBtn = $("<button>Restart</button>");
-var attackBtn = $('#attack-button" ATTACK!');
+    console.log("attackBtn");
 
 
+    $(".chars").on("click", function () {
 
-$(".chars").on("click", function () {
+        // if ()
 
-    console.log($(this).attr("name")); // logging the chars name list //
+            for (var i = 0; i < allChars.length; i++) {
 
-    for (var i = 0; i < chars.length; i++) {
+                if ($(this).attr("name") === allChars[i].name) {
+                    player.health = allChars[i].health;
+                    printToScreen();
 
-        if ($(this).attr("name") === chars[i].name) {
-            player.health = chars[i].health;
-            printToScreen();
+                    console.log(allChars[i].health);
+                    console.log(allChars[i].attack);
 
-            console.log(chars[i].health);
-            console.log(chars[i].attack);
+                }
 
+                console.log(allChars[i].name);
+
+            }
+    });
+
+    var enemy = {};
+    var chosenEn;
+
+    $(".chars").on("click", function () {
+
+        console.log($(this).attr("name"));
+
+        for (var j = 0; j < allChars.length; j++) {
+
+            if ($(this).attr("name") === allChars[j].name) {
+                enemy.health = allChars[j].health;
+                printToScreen();
+
+                console.log(allChars[j].health);
+                console.log(allChars[j].attack);
+            }
         }
 
-        console.log(chars[i].name);
+
+
+    });
+
+
+
+    // const attack = () => {
+    //     let playerAtk = Math.floor(Math.random() * player.power);
+    //     enemy.health -= playerAtk;
+    //     printToScreen();
+
+    // }
+
+    const printToScreen = () => {
+        document.getElementById('player-health').innerText = player.health;
+        document.getElementById('enemy-health').innerText = enemy.health;
 
     }
-});
-
-var enemy = {};
-var chosenEn;
-
-$(".chars").on("click", function() {
-
-    console.log($(this).attr("name"));
-
-    for (var j = 0; j < chars.length; j++) {
-
-        if($(this).attr("name") === chars[j].name) {
-            enemy.health = chars[j].health;
-            printToScreen();
-
-            console.log(chars[j].health);
-            console.log(chars[j].attack);
-        }
-    }
-
-
-
-});
-
-
-
-// const attack = () => {
-//     let playerAtk = Math.floor(Math.random() * player.power);
-//     enemy.health -= playerAtk;
-//     printToScreen();
-
-// }
-
-const printToScreen = () => {
-    document.getElementById('player-health').innerText = player.health;
-    document.getElementById('enemy-health').innerText = enemy.health;
-
-}
 
 
 });
