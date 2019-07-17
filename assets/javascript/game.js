@@ -15,7 +15,7 @@ $(document).ready(function () {
         attack: 15,
         counter: 20,
         loseImg: "finnlose.png",
-},
+    },
     {
         name: "jake",
         health: 120,
@@ -39,41 +39,39 @@ $(document).ready(function () {
 
     }]
 
-    // user selecting character on click //
+    // listed all possible vars //
+
     var player = "";
     var chosenChar = "";
     var opponent = "";
-    var currentE = "";
+    var chosenEn = "";
     var currentAttack = 0;
     var wins = 0;
     var restartBtn = $("#restart-button");
     var attackBtn = $("#attack-button");
 
-    console.log("attackBtn");
-
+    // user selecting character on click //
 
     $(".chars").on("click", function () {
 
         // if ()
 
-            for (var i = 0; i < allChars.length; i++) {
+        for (var i = 0; i < allChars.length; i++) {
 
-                if ($(this).attr("name") === allChars[i].name) {
-                    player.health = allChars[i].health;
-                    printToScreen();
+            if ($(this).attr("name") === allChars[i].name) {
+                player.health = allChars[i].health;
+                printToScreen();
 
-                    console.log(allChars[i].health);
-                    console.log(allChars[i].attack);
-
-                }
-
-                console.log(allChars[i].name);
+                console.log(allChars[i].health);
+                console.log(allChars[i].attack);
 
             }
-    });
 
-    var enemy = {};
-    var chosenEn;
+            console.log(allChars[i].name);
+
+        }
+
+    });
 
     $(".chars").on("click", function () {
 
@@ -89,8 +87,6 @@ $(document).ready(function () {
                 console.log(allChars[j].attack);
             }
         }
-
-
 
     });
 
