@@ -9,13 +9,14 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 </head>
 
 <body background="assets/images/bg.jpg">
     <h1> Adventure Time RPG</h1>
 
-    <div class="yourChar">
+    <div id="youChar" class="area">
         <h3>Your Character:</h3>
         <input type="image" src="assets/images/finn.png" name="finn" class="chars" id="finnH">
         <input type="image" src="assets/images/jake.png" name="jake" class="chars" id="jakeD">
@@ -23,35 +24,36 @@
         <input type="image" src="assets/images/lsp.png" name="lsp" class="chars" id="lsP">
         <br>
         <br>
-        <h4> Your Health <span id="player-health"></span></h4>
+        <div id="player-health">
+            <h4> Your Health </h4>
+        </div>
     </div>
 
-    <div class="enemyS">
-        <h3> Enemies Available to Attack</h3>
+    <div id="enemyS" class="area">
+        <h3> Enemies Available to Attack </h3>
         <br>
     </div>
 
-    <div class="fightS">
-        <h3> Fight Section</h3>
+    <div id="fightS" class="area">
+        <h3> Fight Section </h3>
         <br>
-        <button type="button" class="btn btn-outline-danger btn-lg" id="attack-button" onclick="attack()"> Attack
-        </button>
-    </div>
-    
-    <div class="defenderS">
-        <h3> Enemy</h3>
-        <br>
-        <br>
-        <h4> Enemy Health <span id="enemy-health"></span></h4>
     </div>
 
+    <div id="defenderS" class="area">
+        <h3> Enemy </h3>
+        <br>
+        <br>
+        <div id="enemy-health">
+            <h4> Enemy Health </h4>
+        </div>
 
+    <div id="buttonS" class="area">
+        <button type="button" class="btn btn-outline-danger btn-lg" id="attack-button"> Attack </button>
+        <button type="button" class="btn btn-outline-success btn-lg" id="restart-button"> Restart </button>
+    </div>
 
-    <button type="button" class="btn btn-outline-success btn-lg" id="restart-button"> Restart </button>
-
-
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="./assets/javascript/game.js"></script>
+
 </body>
 
 </html>
