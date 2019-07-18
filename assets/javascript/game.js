@@ -48,8 +48,8 @@ $(document).ready(function () {
     var chosenEn = "";
     var currentAttack = 0;
     var wins = 0;
-    var restartBtn = $("#restart-button");
-    var attackBtn = $("#attack-button");
+    // var restartBtn = $("#restart-button");
+    // var attackBtn = $("#attack-button");
 
     // user selecting character on click //
 
@@ -64,7 +64,7 @@ $(document).ready(function () {
             $(this).attr("class", "player-class");
 
 
-    //     };
+        };
        
         $("#enemyS").on("click", ".chars", function chooseOp() {
             if (!chosenEn) {
@@ -86,7 +86,7 @@ $(document).ready(function () {
 
             $("#attack-button").on("click", function() {
                 playerAtk();
-                counterAtk():
+                counterAtk();
                 if (wins === 3) {
                     playerWin();
                 }
@@ -97,43 +97,40 @@ $(document).ready(function () {
             playerAtk += player.attack;
             opponent.health -= currentAttack;
             $("#opponent-health").text(opponent.health);
-            if(opponent.health) <= 0 && char.health > 0) {
+            if(opponent.health <= 0 && char.health > 0) {
                 playerDead();
+            };
+
+        };
+
+        function counterAtk() {
+            if(char.health > 0) {
+                char.health -= opponent.counter;
+            
             }
-            )
-
-
-
-
-        }
-
-        // for (var i = 0; i < allChars.length; i++) {
-
-        //     if ($(this).attr("name") === allChars[i].name) {
-
-        //         printToScreen();
-
-        //     console.log(allChars[i].health);
-        //     console.log(allChars[i].attack);
-
-        // }
-
-        // console.log(allChars[i].name);
-
-        
-        
-        // const attack = () => {
-            //     let playerAtk = Math.floor(Math.random() * player.power);
-    //     enemy.health -= playerAtk;
-    //     printToScreen();
+            if(char.health <= 0) {
+                $("#textBox").append("You Lose!!");
     
-    // }
-    
-    const printToScreen = () => {
-        document.getElementById('player-health').innerText = player.health;
-        document.getElementById('enemy-health').innerText = enemy.health;
-        
-    };
+            }
+            $("#player-health").text(char.health);
+        };
 
+        function playerDead() {
+            wins++;
+            $(opponent).html("<img src='assets/images/") + opponent.loseImg ;
+            $(opponent).addClass("defeated");
+            $("#fightS").append(opponent);
+            $("textBox").append("You defeated one of them! Choose another enemy!");
+            opponent = "";
+
+        };
+
+        function playerWin () {
+            $("#textBox").text("You have defeated all 3 enemies, you win!");
+        };
+    
+    
+ 
+    
+    });
 });
-
