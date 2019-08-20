@@ -9,41 +9,43 @@ $(document).ready(function () {
 
     // declar var for all characters in an array of objects //
 
-    var allChars = {
-        finn: {
+    var allChars = [
+        {
+            name: "finn",
             health: 100,
             attack: 15,
             counter: 20,
-            loseImg: "finnlose.png",
+            img: "assets/images/finn.png"
 
         },
-        jake: {
+        {
+            name: "jake",
             health: 120,
             attack: 18,
             counter: 35,
-            loseImg: "jakelose.png",
+            img: "assets/images/jake.png"
         },
-        iceking: {
-
+        {
+            name: "iceking",
             health: 130,
             attack: 10,
             counter: 5,
-            loseImg: "icekinglose.png",
+            img: "assets/images/iceking.png"
         },
 
-        lsp: {
+        {
+            name: "lsp",
             health: 150,
             attack: 20,
             counter: 18,
-            loseImg: "lsplose.png"
+            img: "assets/images/lsp.png"
 
         }
-
-    };
+    ];
 
     // listed all possible vars //
 
-    var player = "";
+    var player;
     var opponent = "";
     var chosenEn = "";
     var currentAttack = 0;
@@ -53,84 +55,96 @@ $(document).ready(function () {
 
     // user selecting character on click //
 
-    $(".chars").on("click", function () {
-
+    $(".chars").on("click", function() {
         if (!player) {
-            player = allChars[$(this).val()];
+            var index = $(this).val();
+            parseInt(index);
+            player = allChars[index];
 
-            chosenChar();
-            $("#yourChar").append(this);
-            $("#player-health").append(char.health);
-            $(this).attr("class", "player-class");
+            // chosenChar();
+            $("#player-health").append(player.health);
+            $("#characs").hide();
 
+            var input = $("<input>");
+            input.attr("type", "image");
+            input.attr("src", player.img);
+            input.attr("id", "chosenChar");
+            $("#youChar").append(input);
 
-        };
-       
-        $("#enemyS").on("click", ".chars", function chooseOp() {
-            if (!chosenEn) {
-                chosenEn = this;
-
-                opponent = allChars[$(this.val)];
-                $(this).removeClass("chars");
-                $("#enemyS").append(this);
-                $("opponent-health").append(opponent.health);
-
-
-            }
-        });
-
-        function chosenChar() {
-            $(".enemyS").append(finnChar, jakeChar, iceKingChar, lsPChar);
-
-        };
-
-            $("#attack-button").on("click", function() {
-                playerAtk();
-                counterAtk();
-                if (wins === 3) {
-                    playerWin();
+            for (var i = 0; i < allChars.length; i++) {
+                if (player.name != allChars[i].name) {
+                    var input2 = $("<input>");
+                    input2.attr("type", "image");
+                    input2.attr("src", allChars[i].img);
+                    input2.addClass("enemy");
+                    input2.attr("name", allChars[i].name);
+                    $("#enemyS").append(input2);
                 }
-            });
-
-
-        function playerAtk() {
-            playerAtk += player.attack;
-            opponent.health -= currentAttack;
-            $("#opponent-health").text(opponent.health);
-            if(opponent.health <= 0 && char.health > 0) {
-                playerDead();
             };
-
         };
-
-        function counterAtk() {
-            if(char.health > 0) {
-                char.health -= opponent.counter;
-            
-            }
-            if(char.health <= 0) {
-                $("#textBox").append("You Lose!!");
-    
-            }
-            $("#player-health").text(char.health);
-        };
-
-        function playerDead() {
-            wins++;
-            $(opponent).html("<img src='assets/images/") + opponent.loseImg ;
-            $(opponent).addClass("defeated");
-            $("#fightS").append(opponent);
-            $("textBox").append("You defeated one of them! Choose another enemy!");
-            opponent = "";
-
-        };
-
-        function playerWin () {
-            $("#textBox").text("You have defeated all 3 enemies, you win!");
-        };
-    
-    
- 
-    
     });
+
+    $("#enemyS").on("click", ".enemy", function() {
+        if (!chosenEn) {
+            
+            opponent = allChars[$(this.val)];
+            $(this).removeClass("chars");
+            $("#enemyS").append(this);
+            $("opponent-health").append(opponent.health);
+
+
+        }
+    });
+
+    // function chosenChar() {
+    //         $(".enemyS").append(finnChar, jakeChar, iceKingChar, lsPChar);
+
+    //     };
+
+    $("#attack-button").on("click", function () {
+        playerAtk();
+        counterAtk();
+        if (wins === 3) {
+            playerWin();
+        }
+    });
+
+
+    function playerAtk() {
+        playerAtk += player.attack;
+        opponent.health -= currentAttack;
+        $("#opponent-health").text(opponent.health);
+        if (opponent.health <= 0 && char.health > 0) {
+            playerDead();
+        };
+
+    };
+
+    function counterAtk() {
+        if (char.health > 0) {
+            char.health -= opponent.counter;
+
+        }
+        if (char.health <= 0) {
+            $("#textBox").append("You Lose!!");
+
+        }
+        $("#player-health").text(char.health);
+    };
+
+    function playerDead() {
+        wins++;
+        $(opponent).html("<img src='assets/images/") + opponent.loseImg;
+        $(opponent).addClass("defeated");
+        $("#fightS").append(opponent);
+        $("textBox").append("You defeated one of them! Choose another enemy!");
+        opponent = "";
+
+    };
+
+    function playerWin() {
+        $("#textBox").text("You have defeated all 3 enemies, you win!");
+    };
+
+
 });
