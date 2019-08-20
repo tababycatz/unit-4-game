@@ -85,21 +85,18 @@ $(document).ready(function () {
     });
 
     $("#enemyS").on("click", ".enemy", function() {
-        if (!chosenEn) {
-            
+        if (!chosenEn) {            
             opponent = allChars[$(this.val)];
-            $(this).removeClass("chars");
+            opponent.removeClass("enemy");
+            opponent.addClass("");
+            opponent.
             $("#enemyS").append(this);
-            $("opponent-health").append(opponent.health);
+            for (var j = 0; j < allChars.length; j++);
+            $("opponent-health").append(allChars[j].health);
 
 
         }
     });
-
-    // function chosenChar() {
-    //         $(".enemyS").append(finnChar, jakeChar, iceKingChar, lsPChar);
-
-    //     };
 
     $("#attack-button").on("click", function () {
         playerAtk();
