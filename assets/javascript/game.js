@@ -2,10 +2,10 @@ $(document).ready(function () {
 
     // declaring vars for characters from html //
 
-    var finnChar = $("#finnH");
-    var jakeChar = $("#jakeD");
-    var iceKingChar = $("#iceKing");
-    var lsPChar = $("#lsP");
+    // var finnChar = $("#finnH");
+    // var jakeChar = $("#jakeD");
+    // var iceKingChar = $("#iceKing");
+    // var lsPChar = $("#lsP");
 
     // declar var for all characters in an array of objects //
 
@@ -46,8 +46,7 @@ $(document).ready(function () {
     // listed all possible vars //
 
     var player;
-    var opponent = "";
-    var chosenEn = "";
+    var chosenEn;
     var currentAttack = 0;
     var wins = 0;
     // var restartBtn = $("#restart-button");
@@ -61,7 +60,6 @@ $(document).ready(function () {
             parseInt(index);
             player = allChars[index];
 
-            // chosenChar();
             $("#player-health").append(player.health);
             $("#characs").hide();
 
@@ -86,15 +84,27 @@ $(document).ready(function () {
 
     $("#enemyS").on("click", ".enemy", function() {
         if (!chosenEn) {            
-            opponent = allChars[$(this.val)];
-            opponent.removeClass("enemy");
-            opponent.addClass("");
-            opponent.
-            $("#enemyS").append(this);
-            for (var j = 0; j < allChars.length; j++);
-            $("opponent-health").append(allChars[j].health);
+            var nemesis = $(this).val();
+            parseInt(nemesis);
+            chosenEn = allChars[nemesis];
+            $("#opponent-health").append(chosenEn.health);
+            // $("#characs").hide();
 
-
+            var input3 = $("<input>");
+            input3.attr("type", "image");
+            input3.attr("src", chosenEn.img);
+            input3.attr("id", "chosenEn");
+            $("#defenderS").append(input3);
+            
+            for (var j = 0; j < allChars.length; j++) {
+                if (nemesis.name!= allChars[j].name) {
+                var input4 = $("<input>");
+                input4.attr("type", "image");
+                input4.attr("src", allChars[j].img);
+                input4.addClass("enemy");
+                input4.attr("name", allChars[j].name);
+            }
+            }
         }
     });
 
