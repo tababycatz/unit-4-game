@@ -75,6 +75,7 @@ $(document).ready(function () {
                     input2.attr("type", "image");
                     input2.attr("src", allChars[i].img);
                     input2.addClass("enemy");
+                    input2.attr("value",i)
                     input2.attr("name", allChars[i].name);
                     $("#enemyS").append(input2);
                 }
@@ -119,9 +120,9 @@ $(document).ready(function () {
 
     function playerAtk() {
         playerAtk += player.attack;
-        opponent.health -= currentAttack;
-        $("#opponent-health").text(opponent.health);
-        if (opponent.health <= 0 && char.health > 0) {
+        chosenEn.health -= currentAttack;
+        $("#opponent-health").text(chosenEn.health);
+        if (chosenEn.health <= 0 && char.health > 0) {
             playerDead();
         };
 
