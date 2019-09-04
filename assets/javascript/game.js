@@ -129,24 +129,22 @@ $(document).ready(function () {
     };
 
     function counterAtk() {
-        if (char.health > 0) {
-            char.health -= opponent.counter;
+        if (player.health > 0) {
+            player.health -= chosenEn.counter;
 
         }
-        if (char.health <= 0) {
+        if (player.health <= 0) {
             $("#textBox").append("You Lose!!");
 
         }
-        $("#player-health").text(char.health);
+        $("#player-health").text(player.health);
     };
 
     function playerDead() {
         wins++;
-        $(opponent).html("<img src='assets/images/") + opponent.loseImg;
-        $(opponent).addClass("defeated");
-        $("#fightS").append(opponent);
+        $(chosenEn).addClass("defeated");
         $("textBox").append("You defeated one of them! Choose another enemy!");
-        opponent = "";
+        chosenEn = "";
 
     };
 
