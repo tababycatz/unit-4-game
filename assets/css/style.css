@@ -3,24 +3,29 @@ h1 {
     color: black;
     text-align: center;
     padding: 20px 20px 20px 20px;
-
 }
 
-h3 {
+h3, h5 {
     font-size: 35px;
     color: black;
     text-align: center;
-
 }
 
-.chars, .boxi {
-width: 200px;
-height: 300px;
-position: relative;
 
+img {
+    width: 200px;
+    height: 300px;
 }
 
-#youChar, #player-health, #enemyS, #defenderS, #enemy-health {
-    position: fixed,center;
-    
+.chars, .enemy1 {
+    width: 200px;
+    height: 300px;
+    position: relative;
+}
+
+
+#chosenEn{
+    width: 200px;
+    height: 300px;
+    position: relative;
 }

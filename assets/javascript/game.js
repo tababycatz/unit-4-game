@@ -60,7 +60,7 @@ $(document).ready(function () {
             parseInt(index);
             player = allChars[index];
 
-            $("#player-health").append(player.health);
+            $("#char-health").append(player.health);
             $("#characs").hide();
 
             var input = $("<input>");
@@ -74,7 +74,7 @@ $(document).ready(function () {
                     var input2 = $("<input>");
                     input2.attr("type", "image");
                     input2.attr("src", allChars[i].img);
-                    input2.addClass("enemy");
+                    input2.addClass("enemy1");
                     input2.attr("value",i)
                     input2.attr("name", allChars[i].name);
                     $("#enemyS").append(input2);
@@ -83,7 +83,7 @@ $(document).ready(function () {
         };
     });
 
-    $("#enemyS").on("click", ".enemy", function() {
+    $("#enemyS").on("click", ".enemy1", function() {
         if (!chosenEn) {            
             var nemesis = $(this).val();
             parseInt(nemesis);
@@ -108,15 +108,7 @@ $(document).ready(function () {
             }
         }
     });
-
-    $("#attack-button").on("click", function () {
-        {playerAtk()}
-        {counterAtk()
-        if (wins === 3) 
-            playerWin();
-    }});
-
-
+    
     function playerAtk() {
         playerAtk += player.attack;
         chosenEn.health -= currentAttack;
@@ -126,6 +118,15 @@ $(document).ready(function () {
         };
 
     };
+
+    $("#attack-button").on("click", function() {
+        {playerAtk()}
+        {counterAtk()
+        if (wins === 3) 
+            playerWin();
+    }});
+
+
 
     function counterAtk() {
         if (player.health > 0) {

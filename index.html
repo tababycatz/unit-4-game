@@ -16,61 +16,80 @@
 <body background="assets/images/bg.jpg">
     <h1> Adventure Time RPG</h1>
 
-    <div id="characs" class="options">
-        <input type="image" src="assets/images/finn.png" value="0" name="finn" class="chars" id="finnH">
-        <input type="image" src="assets/images/jake.png" value="1" name="jake" class="chars" id="jakeD">
-        <input type="image" src="assets/images/iceking.png" value="2" name="iceking" class="chars" id="iceKing">
-        <input type="image" src="assets/images/lsp.png" value="3" name="lsp" class="chars" id="lsP">
-    </div>
-
-    <div id="youChar" class="container">
+    <div class="container">
         <div class="row justify content center">
-            <div class="col 4">
-                <h3>Your Character:</h3>
-                <br>
-                <br>
-            </div>
-        </div>
-    </div>
-    <div id="player-health" class="container">
-        <div class="row justify content center">
-            <div class="col 4">
-                <h5 id="char-health"> Your Health </h5>
-            </div>
-        </div>
-    </div>
-    <div id="enemyS" class="enemy">
-        <div class="row justify content center">
-            <div class="col 4">
-                <h3> Enemies Available to Attack </h3>
-                <br>
+            <div id="characs" class="options">
+                <input type="image" src="assets/images/finn.png" value="0" name="finn" class="chars" id="finnH">
+                <input type="image" src="assets/images/jake.png" value="1" name="jake" class="chars" id="jakeD">
+                <input type="image" src="assets/images/iceking.png" value="2" name="iceking" class="chars" id="iceKing">
+                <input type="image" src="assets/images/lsp.png" value="3" name="lsp" class="chars" id="lsP">
             </div>
         </div>
     </div>
 
-    <div id="defenderS" class="container">
+    <div class="container">
         <div class="row justify content center">
-            <div class="col 4">
-                <h3> Enemy </h3>
-                <br>
-                <br>
+            <div id="youChar" class="container">
+                <div class="col 4">
+                    <h3>Your Character:</h3>
+                    <br>
+                    <br>
+                </div>
             </div>
         </div>
     </div>
-    <div id="enemy-health" class="container">
-            <div class="row justify content center">
-        <div class="col 4">
-            <h5 id="opponent-health"> Enemy Health </h5>
+
+    <div class="container">
+        <div class="row justify content center">
+            <div id="player-health" class="container"> ********
+                <div class="row justify content center">
+                    <div class="col 4">
+                        <h5 id="char-health"> Your Health </h5>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+
+    <div class="container">
+        <div class="row justify content center">
+            <div id="enemyS" class="enemy">
+                <div class="row justify content center">
+                    <div class="col 4">
+                        <h3> Enemies Available to Attack </h3>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="row justify content center">
+            <div id="defenderS" class="container">
+                <div class="col 4">
+                    <h3> Enemy </h3>
+                    <br>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row justify content center">
+            <div id="enemy-health">
+                <div class="col 4">
+                    <h5 id="opponent-health"> Enemy Health </h5>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div id="buttonS" class="container">
-            <div class="row justify content center">
-        <div class="col 4">
+        <div class="row justify content center">
             <button type="button" class="btn btn-outline-danger btn-lg" id="attack-button"> Attack </button>
-            <button type="button" class="btn btn-outline-success btn-lg" id="restart-button"> Restart </button>
-        </div>
         </div>
     </div>
 
