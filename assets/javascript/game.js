@@ -89,7 +89,7 @@ $(document).ready(function () {
             parseInt(nemesis);
             chosenEn = allChars[nemesis];
             $("#opponent-health").append(chosenEn.health);
-            // $("#characs").hide();
+            $("#characs").hide();
 
             var input3 = $("<input>");
             input3.attr("type", "image");
@@ -110,12 +110,11 @@ $(document).ready(function () {
     });
 
     $("#attack-button").on("click", function () {
-        playerAtk();
-        counterAtk();
-        if (wins === 3) {
+        {playerAtk()}
+        {counterAtk()
+        if (wins === 3) 
             playerWin();
-        }
-    });
+    }});
 
 
     function playerAtk() {

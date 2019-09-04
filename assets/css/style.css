@@ -13,9 +13,14 @@ h3 {
 
 }
 
-.chars {
+.chars, .boxi {
 width: 200px;
 height: 300px;
 position: relative;
 
+}
+
+#youChar, #player-health, #enemyS, #defenderS, #enemy-health {
+    position: fixed,center;
+    
 }
