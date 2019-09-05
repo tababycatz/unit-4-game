@@ -20,12 +20,12 @@ img {
 .chars, .enemy1 {
     width: 200px;
     height: 300px;
-    position: relative;
+    position: center;
 }
 
 
-#chosenEn{
+#player, #chosenEn{
     width: 200px;
     height: 300px;
-    position: relative;
+    position: center;
 }

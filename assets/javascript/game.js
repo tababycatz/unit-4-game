@@ -89,7 +89,7 @@ $(document).ready(function () {
             parseInt(nemesis);
             chosenEn = allChars[nemesis];
             $("#opponent-health").append(chosenEn.health);
-            $("#characs").hide();
+            $("#enemyS").hide();
 
             var input3 = $("<input>");
             input3.attr("type", "image");
